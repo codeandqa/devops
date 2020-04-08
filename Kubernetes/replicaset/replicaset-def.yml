@@ -5,7 +5,7 @@ metadata:
 spec:
   replicas: 4
   selector:
-    app: myapp
+    app: beer_review
   template:
     metadata:
       name: beer_review_pod
