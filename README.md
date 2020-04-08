@@ -1,5 +1,5 @@
-# Project Title
+# Kubernetes Learning
 
 ## Table of Contents
-Learning kubernets. 
+Create Kubernetes cluster and add pods
 

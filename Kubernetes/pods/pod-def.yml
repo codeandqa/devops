@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: myapp
+  name: beer_review_pod
   labels:
-    name: myapp
-    version: 0.0.1
+    name: beer_review_front_end
+    stack: dev
 spec:
   containers:
-  - name: myapp
+  - name: beer_review
     image: adityashahi/myapp:latest
     resources:
       limits:
