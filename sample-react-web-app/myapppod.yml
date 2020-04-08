@@ -1,0 +1,173 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2020-04-06T00:25:01Z"
+  labels:
+    name: myapp
+    version: 0.0.1
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:name: {}
+          f:version: {}
+      f:spec:
+        f:containers:
+          k:{"name":"myapp"}:
+            .: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:ports:
+              .: {}
+              k:{"containerPort":3000,"protocol":"TCP"}:
+                .: {}
+                f:containerPort: {}
+                f:protocol: {}
+            f:resources:
+              .: {}
+              f:limits:
+                .: {}
+                f:cpu: {}
+                f:memory: {}
+              f:requests:
+                .: {}
+                f:cpu: {}
+                f:memory: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext: {}
+        f:terminationGracePeriodSeconds: {}
+    manager: kubectl
+    operation: Update
+    time: "2020-04-06T00:25:01Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"ContainersReady"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Initialized"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Ready"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+        f:containerStatuses: {}
+        f:hostIP: {}
+        f:phase: {}
+        f:podIP: {}
+        f:podIPs:
+          .: {}
+          k:{"ip":"172.17.0.6"}:
+            .: {}
+            f:ip: {}
+        f:startTime: {}
+    manager: kubelet
+    operation: Update
+    time: "2020-04-06T00:25:05Z"
+  name: myapp
+  namespace: default
+  resourceVersion: "29870"
+  selfLink: /api/v1/namespaces/default/pods/myapp
+  uid: afe7e164-1ef0-41c1-9d08-6009ef5b6c9c
+spec:
+  containers:
+  - image: adityashahi/myapp:latest
+    imagePullPolicy: Always
+    name: myapp
+    ports:
+    - containerPort: 3000
+      protocol: TCP
+    resources:
+      limits:
+        cpu: 500m
+        memory: 128Mi
+      requests:
+        cpu: 500m
+        memory: 128Mi
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-rcqbp
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: minikube
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: default-token-rcqbp
+    secret:
+      defaultMode: 420
+      secretName: default-token-rcqbp
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2020-04-06T00:25:01Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2020-04-06T00:25:05Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2020-04-06T00:25:05Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2020-04-06T00:25:01Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://a175dd27dd894473cbfa9b87f607d65d42cda8d379d451ca59c2966cadc6e349
+    image: adityashahi/myapp:latest
+    imageID: docker-pullable://adityashahi/myapp@sha256:82ae6fafad311b1b772f1360872e0bb59a370d77a6d0352cfd22c5ccb3a8809a
+    lastState: {}
+    name: myapp
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2020-04-06T00:25:05Z"
+  hostIP: 192.168.99.100
+  phase: Running
+  podIP: 172.17.0.6
+  podIPs:
+  - ip: 172.17.0.6
+  qosClass: Guaranteed
+  startTime: "2020-04-06T00:25:01Z"
